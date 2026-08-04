@@ -20,7 +20,7 @@ export const AGENCY: Agency = {
   name: "illusionTech.",
   short: "illusionTech.",
   tagline: "Independent design & development studio.",
-  email: "asthanashivam1@gmail.com",
+  email: "illusiontech01@gmail.com",
   phone: "+91 9930518907",
   address: "Navi Mumbai",
   hours: "Mon — Fri · 09:00 to 18:00 IST",
