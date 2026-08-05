@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { AGENCY } from "../data/site";
+import logo from "/illusiontech-logo.png";
 
 interface FooterLink {
   label: string;
@@ -58,14 +59,11 @@ export default function Footer(): React.JSX.Element {
           {/* Left */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2.5 mb-8">
-              <span className="relative inline-flex items-center justify-center w-9 h-9 rounded-full bg-white text-[#0F172A] font-display font-bold">
-                iT.
-                <span className="absolute -right-0.5 -bottom-0.5 w-2 h-2 rounded-full bg-[#06B6D4]" />
-              </span>
-
-              <span className="font-display font-semibold tracking-tight text-white text-lg">
-                {AGENCY.name}
-              </span>
+              <img
+                  src={logo}
+                  alt="IllusionTech"
+                  className="h-25 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                />
             </div>
 
             <div

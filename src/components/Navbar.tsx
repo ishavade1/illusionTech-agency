@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { AGENCY } from "../data/site";
+import logo from "/illusiontech-logo.png";
 
 declare global {
   interface Window {
@@ -92,19 +93,16 @@ export default function Navbar(): React.JSX.Element {
     >
       <nav className="max-w-[1440px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between">
         <button
-          data-testid="nav-logo"
-          onClick={() => scrollToId("home")}
-          className="flex items-center gap-2.5 group"
-        >
-          <span className="relative inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0F172A] text-white font-display font-bold text-sm">
-            iT.
-            <span className="absolute -right-0.5 -bottom-0.5 w-2 h-2 rounded-full bg-[#06B6D4]" />
-          </span>
-
-          <span className="font-display font-semibold tracking-tight text-[#0F172A] text-[15px]">
-            {AGENCY.name}
-          </span>
-        </button>
+            data-testid="nav-logo"
+            onClick={() => scrollToId("home")}
+            className="group"
+          >
+            <img
+              src={logo}
+              alt="IllusionTech"
+              className="h-18 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </button>
 
         <ul className="hidden md:flex items-center gap-9">
           {NAV.map((n) => (
