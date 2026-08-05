@@ -121,7 +121,7 @@ export default function Footer(): React.JSX.Element {
         {/* Bottom */}
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-[13px] text-white/50">
           <div>
-            © {AGENCY.name}. All rights reserved.
+            © {AGENCY.name} All rights reserved.
           </div>
 
           <div className="flex items-center gap-6">

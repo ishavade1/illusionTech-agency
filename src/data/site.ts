@@ -213,20 +213,20 @@ export interface Testimonial {
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Julian Reyes",
-    role: "Founder · Northlight Bank",
+    name: "Hiresh S",
+    role: "Founder · Rustic Visual Solution",
     body: "The most senior team we've worked with. Pixelforge shipped a product that raised our conversion by 41% in the first quarter.",
     // avatar: "https://images.pexels.com/photos/31660586/pexels-photo-31660586.jpeg",
   },
   {
-    name: "Aditya Sharma",
-    role: "Head of Growth · Aster Health",
+    name: "Tarang",
+    role: "Head of Growth · Meridian Estate",
     body: "Every meeting felt like a design critique with people who care deeply. We got a website — and a partner.",
     // avatar: "https://images.pexels.com/photos/17685845/pexels-photo-17685845.jpeg",
   },
   {
-    name: "Marcus Wren",
-    role: "CEO · Kavvo Coffee",
+    name: "Hritik",
+    role: "Owner · Obsidian&Bone",
     body: "Beautiful, fast, and thoughtful about the small details customers actually feel. Sales are up 3x since relaunch.",
     // avatar: "https://images.unsplash.com/photo-1638290047807-4c9d389b9aa6",
   },

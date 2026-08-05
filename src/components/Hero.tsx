@@ -81,7 +81,7 @@ export default function Hero(): React.JSX.Element {
             className="flex items-center gap-3 mb-8"
           >
             <span className="inline-flex w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-            <span className="eyebrow">Now booking · Q1 2026</span>
+            <span className="eyebrow">Now booking · Q3 2026</span>
           </motion.div>
 
           <h1
