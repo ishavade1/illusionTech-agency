@@ -215,7 +215,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     name: "Hiresh S",
     role: "Founder · Rustic Visual Solution",
-    body: "The most senior team we've worked with. Pixelforge shipped a product that raised our conversion by 41% in the first quarter.",
+    body: "The most senior team we've worked with. IllusionTech shipped a product that raised our conversion by 41% in the first quarter.",
     // avatar: "https://images.pexels.com/photos/31660586/pexels-photo-31660586.jpeg",
   },
   {
