@@ -91,7 +91,7 @@ export default function Navbar(): React.JSX.Element {
           : "bg-transparent border-transparent",
       ].join(" ")}
     >
-      <nav className="max-w-[1440px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between">
+      <nav className="max-w-[1440px] mx-auto px-5 md:px-10 h-[80px] md:h-[72px] flex items-center justify-between">
         <button
             data-testid="nav-logo"
             onClick={() => scrollToId("home")}
@@ -100,7 +100,7 @@ export default function Navbar(): React.JSX.Element {
             <img
               src={logo}
               alt="IllusionTech"
-              className="h-18 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-10 sm:h-11 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </button>
 
@@ -131,7 +131,7 @@ export default function Navbar(): React.JSX.Element {
 
         <button
           data-testid="nav-mobile-toggle"
-          className="md:hidden w-10 h-10 rounded-full border border-[#E2E8F0] flex items-center justify-center"
+          className="md:hidden w-11 h-11 flex items-center justify-center rounded-full border border-[#E2E8F0]"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
         >
@@ -150,9 +150,11 @@ export default function Navbar(): React.JSX.Element {
             className="fixed inset-0 z-[9999] bg-[#0F172A] text-white overflow-y-auto md:hidden"
           >
             <div className="sticky top-0 bg-[#0F172A] px-6 h-[72px] flex items-center justify-between border-b border-white/10">
-              <div className="font-display font-semibold text-[15px]">
-                {AGENCY.name}
-              </div>
+              <img
+                src={logo}
+                alt="IllusionTech"
+                className="h-8 w-auto object-contain"
+              />
 
               <button
                 data-testid="mobile-menu-close"

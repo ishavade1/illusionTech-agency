@@ -62,7 +62,7 @@ export default function Footer(): React.JSX.Element {
               <img
                   src={logo}
                   alt="IllusionTech"
-                  className="h-25 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
             </div>
 
