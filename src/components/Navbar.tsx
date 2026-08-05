@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { AGENCY } from "../data/site";
 import logo from "/illusiontech-logo.png";
 
 declare global {
