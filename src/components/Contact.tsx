@@ -1,10 +1,15 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Mail, Phone, MapPin, Clock } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { AGENCY } from "../data/site";
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+
 const SERVICES: string[] = [
-  "Landing Page",
+  "Business Website",
   "E-commerce Store",
   "Restaurant Digital Menu",
   "Website Redesign",
@@ -12,8 +17,9 @@ const SERVICES: string[] = [
   "Website Maintenance",
   "SEO & Performance",
 ];
+
 const BUDGETS: string[] = [
-  "Under ₹25,000",
+  "Below ₹25,000",
   "₹25,000 – ₹50,000",
   "₹50,000 – ₹1,00,000",
   "₹1,00,000 – ₹2,50,000",
@@ -70,33 +76,43 @@ export default function Contact(): React.JSX.Element {
       }));
     };
 
-  // No backend yet — this simulates a submit locally so the UI/UX is fully
-  // testable. Swap the body of this function for a real API call once a
-  // backend exists (see comment below).
-  const submit = (e: FormEvent<HTMLFormElement>): void => {
+  const submit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     if (!form.consent) {
       setError("Please agree to be contacted to continue.");
       return;
     }
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      setError("Email service is not configured yet. Please try again later.");
+      return;
+    }
+
     setError("");
     setSubmitting(true);
 
-    // --- Backend integration point ---
-    // When you have an API, replace this setTimeout block with something like:
-    //
-    // try {
-    //   await axios.post(`${API_URL}/contact`, form);
-    //   setDone(true);
-    // } catch (err) {
-    //   setError("Something went wrong. Please try again.");
-    // } finally {
-    //   setSubmitting(false);
-    // }
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          full_name: form.full_name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          service: form.service,
+          budget: form.budget,
+          message: form.message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
       setDone(true);
-    }, 700);
+    } catch (err) {
+      console.error("EmailJS send failed:", err);
+      setError("Something went wrong sending your inquiry. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
