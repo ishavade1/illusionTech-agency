@@ -25,8 +25,8 @@ export const AGENCY: Agency = {
   address: "Navi Mumbai",
   hours: "Mon — Fri · 09:00 to 18:00 IST",
   socials: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
+    { label: "Instagram", href: "https://www.instagram.com/illusiontech_" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/illusiontech01/" },
     
   ],
 };
